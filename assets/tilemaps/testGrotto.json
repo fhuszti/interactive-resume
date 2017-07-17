@@ -46,7 +46,7 @@
          "imageheight":512,
          "imagewidth":576,
          "margin":0,
-         "name":"_spritesheet_Tileset",
+         "name":"mainSpritesheet",
          "spacing":0,
          "tilecount":1152,
          "tileheight":16,
