@@ -9,7 +9,7 @@ InteractiveResume.Grotto.prototype = {
     },
 
     render: function() {
-		this.game.debug.text(this.game.time.fps || '--', 20, 70, "#00ff00", "40px Courier");  
+		this.game.debug.text(this.game.time.fps || '--', 10, 30, "#00ff00", "40px Courier");  
 	},
 
 
@@ -20,6 +20,6 @@ InteractiveResume.Grotto.prototype = {
     },
 
     update: function() {
-        
+        GrottoManager.updateGrotto();
     }
 };

@@ -52,7 +52,7 @@ var funcs = {
         //config.currentState.player.body.setSize(30, 25);
 
         //player gravity
-        config.currentState.player.body.gravity.y = 900;
+        config.currentState.player.body.gravity.y = 1500;
 
         //Animations
         config.currentState.player.anchor.setTo(0.5, 1);
@@ -60,6 +60,57 @@ var funcs = {
 
         //move player with cursor keys
         config.currentState.cursors = config.currentState.game.input.keyboard.createCursorKeys();
-    }
+    },
+
+
+
+
+
+
+
+    /*
+    Player movements management
+    */
+    playerJump: function() {
+        if (config.currentState.player.body.blocked.down || config.currentState.player.body.touching.down) {
+            config.currentState.player.body.velocity.y -= 500;
+            config.currentState.player.frameName = 'ninja4';
+        }
+    },
+
+    playerMov: function() {
+        //Reset speed to steady every frame
+        config.currentState.player.body.velocity.x = 0;
+
+        //Player movements management
+        if (config.currentState.cursors.right.isDown || config.currentState.game.input.pointer1.isDown && Math.floor(config.currentState.game.input.x / (config.currentState.game.width *0.5)) === config.RIGHT) {
+            //  Move to the right
+            config.currentState.player.body.velocity.x = 125;
+            
+            if (config.currentState.player.scale.x < 0)
+                config.currentState.player.scale.x *= -1;
+            
+            config.currentState.player.animations.play('run');
+        } 
+        else if (config.currentState.cursors.left.isDown || config.currentState.game.input.pointer1.isDown && Math.floor(config.currentState.game.input.x / (config.currentState.game.width *0.5)) === config.LEFT) {
+            //  Move to the left
+            config.currentState.player.body.velocity.x = -125;
+            
+            if (config.currentState.player.scale.x > 0)
+                config.currentState.player.scale.x *= -1;
+            
+            config.currentState.player.animations.play('run');
+        } 
+        else {
+            //  Stand still
+            config.currentState.player.animations.stop();
+            config.currentState.player.frameName = 'ninja1';
+        }
+
+        //Jump management
+        if (config.currentState.cursors.up.isDown || config.currentState.game.input.pointer1.isDown && Math.floor(config.currentState.game.input.y / (config.currentState.game.height *0.5)) === config.UP) {
+            this.playerJump();
+        }
+    },
 
 };

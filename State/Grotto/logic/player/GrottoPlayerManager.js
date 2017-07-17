@@ -19,14 +19,14 @@ var GrottoPlayerManager = {
            	    heightPop = config.currentState.game.height - 100;
            	    break;
             default:
-           	    widthPop = 50;
-           	    heightPop = config.currentState.game.height - 50;
+           	    widthPop = 100;
+           	    heightPop = config.currentState.game.height - 100;
         }
         
         config.currentState.player = config.currentState.game.add.sprite(widthPop, heightPop, 'textureAtlas', 'ninja1');
         
         //if the player is coming back from the Languages state, he should start looking to his left
-        if ( config.previousState === 'languages' )
+        if ( config.previousState === 'languages' || config.previousState === null )
             config.currentState.player.scale.x = -1;
     }
 };
