@@ -7,7 +7,7 @@ InteractiveResume.Boot.prototype = {
 
     preload: function() {
         //the texture atlas
-	   this.load.atlasJSONArray('textureAtlas', 'atlas/png/textureAtlas.png', 'atlas/json/textureAtlas.json');
+	   this.load.atlasJSONArray('textureAtlas', 'assets/atlas/png/textureAtlas.png', 'assets/atlas/json/textureAtlas.json');
     },
 
     create: function() {
