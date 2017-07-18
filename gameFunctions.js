@@ -49,10 +49,10 @@ var funcs = {
         config.currentState.player.body.collideWorldBounds = true;
 
         //to prevent the player from "floating" above the ground, reducing its physical body size to ease collisions
-        //config.currentState.player.body.setSize(30, 25);
+        config.currentState.player.body.setSize(config.playerWidth, config.playerHeight);
 
         //player gravity
-        config.currentState.player.body.gravity.y = 1500;
+        config.currentState.player.body.gravity.y = 1000;
 
         //Animations
         config.currentState.player.anchor.setTo(0.5, 1);

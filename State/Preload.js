@@ -7,7 +7,7 @@ InteractiveResume.Preload.prototype = {
 	preload: function() {
 		//load Tiled maps
 		this.load.tilemap('grottoMap', 'assets/tilemaps/testGrotto.json', null, Phaser.Tilemap.TILED_JSON);
-		this.load.tilemap('academicsMap', 'assets/tilemaps/testAcademics.json', null, Phaser.Tilemap.TILED_JSON);
+		this.load.tilemap('aboutMap', 'assets/tilemaps/testAbout.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.tilemap('languagesMap', 'assets/tilemaps/testLanguages.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.tilemap('frameworksMap', 'assets/tilemaps/testFrameworks.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.tilemap('miscMap', 'assets/tilemaps/testMisc.json', null, Phaser.Tilemap.TILED_JSON);

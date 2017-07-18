@@ -1,13 +1,13 @@
-var GrottoManager = {
+var AboutManager = {
 
-    generateGrotto: function() {
+    generateAbout: function() {
     	funcs.addBackground();
 
     	//Initial map setup
-        funcs.mapSetup('grottoMap');
+        funcs.mapSetup('aboutMap');
 
         //create player at different places depending where the visitor was before
-        GrottoPlayerManager.createPlayer();
+        AboutPlayerManager.createPlayer();
 
         //setting physics for the player and things other than platforms
         config.currentState.game.physics.arcade.enable(config.currentState.player);
@@ -22,20 +22,20 @@ var GrottoManager = {
 
 
 
-    updateGrotto: function() {
+    updateAbout: function() {
     	//collisions
         config.currentState.game.physics.arcade.collide(config.currentState.player, config.currentState.blockedLayer);
 
         //Player movements management
         funcs.playerMov();
 
-        //if the player touches the left border at certain heights, we go to About
-        if ( config.currentState.player.body.left === 0 && (config.currentState.player.y > config.currentState.game.height - 150 || config.currentState.player.y < 100) ) {
-            config.previousState = 'grotto';
+        //if the player touches the right border at certain heights, we go back to the Grotto
+        if ( config.currentState.player.body.right === config.currentState.game.width && (config.currentState.player.y > config.currentState.game.height - 150 || config.currentState.player.y < 100) ) {
+            config.previousState = 'about';
             config.previousX = config.currentState.player.x;
             config.previousY = config.currentState.player.y;
 
-            config.currentState.game.state.start('About');
+            config.currentState.game.state.start('Grotto');
         }
     },
 };

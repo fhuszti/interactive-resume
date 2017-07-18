@@ -2,9 +2,16 @@ var config = {
 		
 	previousState: null,
 
+	previousX : null,
+
+	previousY: null,
+
 	currentState: null,
 
-	gameStarted: false,
+	//defines the player's body size
+	playerWidth: 35,
+
+	playerHeight: 40,
     
     //For touch controls
     LEFT: 0,

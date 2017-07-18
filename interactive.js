@@ -8,13 +8,13 @@ InteractiveResume.game.state.add('Preload', InteractiveResume.Preload);
 
 InteractiveResume.game.state.add('Grotto', InteractiveResume.Grotto);
 
+InteractiveResume.game.state.add('About', InteractiveResume.About);
+
 /*InteractiveResume.game.state.add('Languages', InteractiveResume.Languages);
 
 InteractiveResume.game.state.add('Frameworks', InteractiveResume.Frameworks);
 
 InteractiveResume.game.state.add('Misc', InteractiveResume.Misc);
-
-InteractiveResume.game.state.add('Academics', InteractiveResume.Academics);
 
 InteractiveResume.game.state.add('Contact', InteractiveResume.Contact);
 
